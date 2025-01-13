@@ -17,8 +17,8 @@ public:
     Jucator();
     ~Jucator();
 
-    friend std::ostream& operator<<(std::ostream& os, const Jucator& jucator);
-    friend std::istream& operator>>(std::istream& is, Jucator& jucator);
+    friend std::ostream& operator<<(std::ostream& os, const Jucator& j);
+    friend std::istream& operator>>(std::istream& in, Jucator& j);
 
     void citire();
     void setAnimalut();

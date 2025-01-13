@@ -8,7 +8,7 @@
 #include "Catelus.h"
 #include "Pisicuta.h"
 
-Jucator::Jucator() {}
+Jucator::Jucator() = default;
 
 Jucator::~Jucator() {
     delete animal;

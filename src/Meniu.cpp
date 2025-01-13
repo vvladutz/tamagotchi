@@ -35,10 +35,15 @@ bool Meniu::run() {
                     }
                     int jucatorId;
                     std::cin >> jucatorId;
+                    --jucatorId;
+                    if (!(jucatorId >= 0 && jucatorId < jucatori.size())) {
+                        std::cout << "jucator invalid!\n";
+                        break;
+                    }
                     std::cout << "introduceti parola!\n";
                     std::string parola;
                     std::cin >> parola;
-                    if (jucatori[--jucatorId].checkParola(parola)) {
+                    if (jucatori[jucatorId].checkParola(parola)) {
                         if (jucatori[jucatorId].getAnimal() == nullptr) {
                             jucatori[jucatorId].setAnimalut();
                         }
