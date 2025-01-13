@@ -98,7 +98,7 @@ bool Meniu::run() {
                     for (const auto& i : jucatori) {
                         if (i.getAnimal() != nullptr) {
                             i.getAnimal()->display();
-                            ok=1;
+                            ok=1; //verificare
                         }
                     }
                     if (!ok) std::cout << "nu exista animalute!\n";
