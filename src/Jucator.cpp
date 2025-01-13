@@ -64,6 +64,11 @@ void Jucator::citire() {
     std::cin >> *this;
 }
 
+bool Jucator::operator==(const Jucator &j) const {
+    return j.username == username && j.parola == parola;
+}
+
+
 const std::string& Jucator::getUsername() const {
     return username;
 }

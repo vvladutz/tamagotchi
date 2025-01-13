@@ -16,8 +16,25 @@ Meniu& Meniu::getInstance() {
     return instance;
 }
 
+void Meniu::checkForDuplicates() {
+    for (auto it = jucatori.begin(); it != jucatori.end(); ++it) {
+        auto curent = it + 1;
+        while (curent != jucatori.end()) {
+            if (*it == *curent) {
+                std::cout << "nu poti crea jucatorul " << curent->getUsername() << " deoarece exista deja!\n";
+                curent = jucatori.erase(curent);
+            } else {
+                ++curent;
+            }
+        }
+    }
+}
+
+
+
 bool Meniu::run() {
     while (true) {
+        Meniu::getInstance().checkForDuplicates();
         std::cout << "alegeti: \n";
         std::cout << "1. creeaza un jucator\n";
         std::cout << "2. alege un jucator\n";

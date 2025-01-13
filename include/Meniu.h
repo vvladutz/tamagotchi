@@ -19,6 +19,8 @@ public:
     bool run();
 
     void creeaza();
+
+    void checkForDuplicates();
 };
 
 #endif //MENIU_H
