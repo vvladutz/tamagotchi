@@ -13,13 +13,13 @@ class Catelus : public Animalut {
 private:
     std::string nume;
 public:
-    Catelus();
+    explicit Catelus(std::string nume);
     ~Catelus() override;
 
     void joaca() override;
     void hraneste() override;
     void checkUpgrade();
-    void citire();
+    void citire() override;
     void display() override;
     std::string getNume() override;
     friend std::ostream& operator<<(std::ostream& os, const Catelus& c);

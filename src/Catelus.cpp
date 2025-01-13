@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 
-Catelus::Catelus() : Animalut(0, 20, 1) {}
+Catelus::Catelus(std::string nume) : Animalut(0, 20, 1), nume{std::move(nume)} {}
 Catelus::~Catelus() = default;
 
 void Catelus::checkUpgrade() {

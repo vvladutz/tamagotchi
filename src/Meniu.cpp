@@ -21,7 +21,8 @@ bool Meniu::run() {
         std::cout << "alegeti: \n";
         std::cout << "1. creeaza un jucator\n";
         std::cout << "2. alege un jucator\n";
-        std::cout << "3. exit\n";
+        std::cout << "3. vezi informatii despre toate animalutele existente\n";
+        std::cout << "4. exit\n";
 
         try {
             int raspuns;
@@ -56,44 +57,48 @@ bool Meniu::run() {
                         if (jucatori[jucatorId].getAnimal() == nullptr) {
                             jucatori[jucatorId].setAnimalut();
                         }
-                        else {
-                            bool ok = true;
-                            while (ok) {
-                                std::cout << "ce doriti sa faceti?\n";
-                                std::cout << "1. joaca!\n";
-                                std::cout << "2. hranire.\n";
-                                std::cout << "3. vedeti informatii despre animalutul dvs\n";
-                                std::cout << "4. inapoi la meniul principal\n";
-                                std::cin >> raspuns;
-                                switch (raspuns) {
-                                    case 1: {
-                                        jucatori[jucatorId].getAnimal()->joaca();
-                                        break;
-                                    }
-                                    case 2: {
-                                        jucatori[jucatorId].getAnimal()->hraneste();
-                                        break;
-                                    }
-                                    case 3: {
-                                        jucatori[jucatorId].getAnimal()->display();
-                                        break;
-                                    }
-                                    case 4: {
-                                        ok = false;
-                                        break;
-                                    }
-                                    default: {
-                                        std::cout << "nu inteleg!\n";
-                                        break;
-                                    }
+                        bool ok = true;
+                        while (ok) {
+                            std::cout << "ce doriti sa faceti?\n";
+                            std::cout << "1. joaca!\n";
+                            std::cout << "2. hranire.\n";
+                            std::cout << "3. vedeti informatii despre animalutul dvs\n";
+                            std::cout << "4. inapoi la meniul principal\n";
+                            std::cin >> raspuns;
+                            switch (raspuns) {
+                                case 1: {
+                                    jucatori[jucatorId].getAnimal()->joaca();
+                                    break;
+                                }
+                                case 2: {
+                                    jucatori[jucatorId].getAnimal()->hraneste();
+                                    break;
+                                }
+                                case 3: {
+                                    jucatori[jucatorId].getAnimal()->display();
+                                    break;
+                                }
+                                case 4: {
+                                    ok = false;
+                                    break;
+                                }
+                                default: {
+                                    std::cout << "nu inteleg!\n";
+                                    break;
                                 }
                             }
                         }
                     }
+
                     else std::cout << "parola gresita!\n";
                     break;
                 }
                 case 3: {
+                    for (const auto i : jucatori) {
+                        i.getAnimal()->display();
+                    }
+                }
+                case 4: {
                     return false;
                 }
                 default: {

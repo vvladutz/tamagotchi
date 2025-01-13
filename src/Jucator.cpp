@@ -4,7 +4,7 @@
 
 #include "Jucator.h"
 #include <iostream>
-
+#include <string>
 #include "Catelus.h"
 #include "Pisicuta.h"
 
@@ -22,11 +22,17 @@ void Jucator::setAnimalut() {
     std::cin >> raspuns;
     switch (raspuns) {
         case 1: {
-            this->animal = new Catelus();
+            std::cout << "alegeti numele!\n";
+            std::string nume;
+            std::cin >> nume;
+            this->animal = new Catelus(nume);
             break;
         }
         case 2: {
-            this->animal = new Pisicuta();
+            std::cout << "alegeti numele!\n";
+            std::string nume;
+            std::cin >> nume;
+            this->animal = new Pisicuta(nume);
             break;
         }
         default: {
