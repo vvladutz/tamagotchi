@@ -19,6 +19,9 @@ public:
     void joaca() override;
     void hraneste() override;
     void checkUpgrade();
+    void citire();
+    void display() override;
+    std::string getNume() override;
     friend std::ostream& operator<<(std::ostream& os, const Catelus& c);
     friend std::istream& operator>>(std::istream& in, Catelus& c);
 };

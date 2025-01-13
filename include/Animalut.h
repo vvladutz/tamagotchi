@@ -5,6 +5,8 @@
 #ifndef ANIMALUT_H
 #define ANIMALUT_H
 
+#include <string>
+
 class Animalut {
 protected:
     int varsta;
@@ -16,6 +18,8 @@ public:
 
     virtual void joaca() = 0;
     virtual void hraneste() = 0;
+    virtual void display() = 0;
+    virtual std::string getNume() = 0;
 };
 
 #endif //ANIMALUT_H

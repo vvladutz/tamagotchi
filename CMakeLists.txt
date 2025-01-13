@@ -132,7 +132,16 @@ add_executable(${MAIN_EXECUTABLE_NAME} main.cpp ${SOURCES}
         include/Animalut.h
         src/Animalut.cpp
         src/Catelus.cpp
-        include/Catelus.h)
+        include/Catelus.h
+        include/Meniu.h
+        include/WrongInput.h
+        src/WrongInput.cpp
+        include/Jucator.h
+        src/Jucator.cpp
+        src/Meniu.cpp
+        include/Pisicuta.h
+        src/Pisicuta.cpp
+)
 
 include(cmake/CompilerFlags.cmake)
 ###############################################################################

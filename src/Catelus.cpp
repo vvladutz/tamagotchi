@@ -6,12 +6,14 @@
 #include <iostream>
 #include <string>
 
-Catelus::Catelus() : Animalut(0, 0, 1) {}
+Catelus::Catelus() : Animalut(0, 20, 1) {}
 Catelus::~Catelus() = default;
 
 void Catelus::checkUpgrade() {
-    if (fericire > 100)
+    if (fericire > 100) {
         nivel++;
+        fericire -= 100;
+    }
 }
 
 
@@ -40,3 +42,14 @@ std::istream& operator>>(std::istream& in, Catelus& c) {
     return in;
 }
 
+void Catelus::citire() {
+    std::cin >> *this;
+}
+
+std::string Catelus::getNume() {
+    return nume;
+}
+
+void Catelus::display() {
+    std::cout << *this;
+}
