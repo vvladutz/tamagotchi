@@ -18,6 +18,9 @@ public:
 
     void joaca() override;
     void hraneste() override;
+    void checkUpgrade();
+    friend std::ostream& operator<<(std::ostream& os, const Catelus& c);
+    friend std::istream& operator>>(std::istream& in, Catelus& c);
 };
 
 #endif //CATELUS_H

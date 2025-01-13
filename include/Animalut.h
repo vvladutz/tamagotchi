@@ -9,8 +9,9 @@ class Animalut {
 protected:
     int varsta;
     int fericire;
+    int nivel;
 public:
-    Animalut(int varsta, int fericire);
+    Animalut(int varsta, int fericire, int nivel);
     virtual ~Animalut();
 
     virtual void joaca() = 0;

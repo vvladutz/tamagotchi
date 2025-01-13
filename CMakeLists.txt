@@ -131,7 +131,7 @@ FetchContent_MakeAvailable(googletest)
 add_executable(${MAIN_EXECUTABLE_NAME} main.cpp ${SOURCES}
         include/Animalut.h
         src/Animalut.cpp
-        src/Catel.cpp
+        src/Catelus.cpp
         include/Catelus.h)
 
 include(cmake/CompilerFlags.cmake)

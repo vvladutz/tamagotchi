@@ -4,6 +4,6 @@
 
 #include "Animalut.h"
 
-Animalut::Animalut(int varsta, int fericire) : varsta{varsta}, fericire{fericire} {}
+Animalut::Animalut(int varsta, int fericire, int nivel) : varsta{varsta}, fericire{fericire}, nivel{nivel} {}
 
-Animalut::~Animalut() {}
+Animalut::~Animalut() = default;
