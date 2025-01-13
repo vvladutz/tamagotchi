@@ -45,7 +45,7 @@ bool Meniu::run() {
                     int jucatorId;
                     std::cin >> jucatorId;
                     --jucatorId;
-                    if (!(jucatorId >= 0 && jucatorId < jucatori.size())) {
+                    if (!(jucatorId >= 0 && jucatorId < static_cast<int>(jucatori.size()))) {
                         std::cout << "jucator invalid!\n";
                         break;
                     }
