@@ -18,6 +18,7 @@ public:
     Pisicuta& operator=(const Pisicuta& other);
 
     void joaca() override;
+    void scarpina();
     void hraneste() override;
     void display() override;
     void checkUpgrade();

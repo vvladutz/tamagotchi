@@ -6,6 +6,8 @@
 #include <iostream>
 #include <limits>
 
+#include "Catelus.h"
+#include "Pisicuta.h"
 #include "WrongInput.h"
 
 Meniu::Meniu() = default;
@@ -80,7 +82,8 @@ bool Meniu::run() {
                             std::cout << "1. joaca!\n";
                             std::cout << "2. hranire.\n";
                             std::cout << "3. vedeti informatii despre animalutul dvs\n";
-                            std::cout << "4. inapoi la meniul principal\n";
+                            std::cout << "4. folositi o metoda specifica animalutului dvs!\n";
+                            std::cout << "9. inapoi la meniul principal\n";
                             std::cin >> raspuns;
                             switch (raspuns) {
                                 case 1: {
@@ -96,6 +99,17 @@ bool Meniu::run() {
                                     break;
                                 }
                                 case 4: {
+                                    Animalut* animal = jucatori[jucatorId].getAnimal();
+                                    if (auto* catelus = dynamic_cast<Catelus*>(animal)) {
+                                        catelus->prinde();
+                                    } else if (auto* pisicuta = dynamic_cast<Pisicuta*>(animal)) {
+                                        pisicuta->scarpina();
+                                    } else {
+                                        std::cout << "nu inteleg!\n";
+                                    }
+                                    break;
+                                }
+                                case 9: {
                                     ok = false;
                                     break;
                                 }

@@ -19,13 +19,13 @@ void Catelus::checkUpgrade() {
 
 void Catelus::hraneste() {
     fericire += 10 * 1/nivel;
-    std::cout << "catelusul " << nume << " a fost hranit! (+10 fericire)\n";
+    std::cout << "catelusul " << nume << " a fost hranit! (+" << 10 * 1 / nivel << " fericire)\n";
     checkUpgrade();
 }
 
 void Catelus::joaca() {
     fericire += 15 * 1/nivel;
-    std::cout << "catelusul " << nume << " se joaca! (+15 fericire)\n";
+    std::cout << "catelusul " << nume << " se joaca! (+" << 15 * 1 / nivel << " fericire)\n";
     checkUpgrade();
 }
 
@@ -63,3 +63,9 @@ Catelus& Catelus::operator=(const Catelus &other) {
 }
 
 Catelus::Catelus(const Catelus &other) = default;
+
+void Catelus::prinde() {
+    std::cout << nume << "a prins mingea! (+" << 20 * 1 / nivel << " fericire)\n";
+    fericire += 20 * 1 / nivel;
+    checkUpgrade();
+}

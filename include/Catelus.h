@@ -20,6 +20,7 @@ public:
     Catelus& operator=(const Catelus& other);
 
     void joaca() override;
+    void prinde();
     void hraneste() override;
     void checkUpgrade();
     void citire() override;

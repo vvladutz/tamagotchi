@@ -65,3 +65,9 @@ Pisicuta& Pisicuta::operator=(const Pisicuta &other) {
 }
 
 Pisicuta::Pisicuta(const Pisicuta &other) = default;
+
+void Pisicuta::scarpina() {
+    std::cout << nume << " s-a scarpinat... nu este prea afectata! (+" << 5 * 1/nivel << " fericire)\n";
+    fericire += 5 * 1/nivel;
+    checkUpgrade();
+}
