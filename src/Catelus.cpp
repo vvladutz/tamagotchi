@@ -53,3 +53,13 @@ std::string Catelus::getNume() {
 void Catelus::display() {
     std::cout << *this;
 }
+
+Catelus& Catelus::operator=(const Catelus &other) {
+    if (this != &other) {
+        Animalut::operator=(other);
+        nume = other.nume;
+    }
+    return *this;
+}
+
+Catelus::Catelus(const Catelus &other) = default;

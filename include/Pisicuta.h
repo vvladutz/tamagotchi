@@ -14,6 +14,9 @@ public:
     explicit Pisicuta(std::string nume);
     ~Pisicuta() override;
 
+    Pisicuta(const Pisicuta& other);
+    Pisicuta& operator=(const Pisicuta& other);
+
     void joaca() override;
     void hraneste() override;
     void display() override;

@@ -55,3 +55,13 @@ std::string Pisicuta::getNume() {
 void Pisicuta::display() {
     std::cout << *this;
 }
+
+Pisicuta& Pisicuta::operator=(const Pisicuta &other) {
+    if (this != &other) {
+        Animalut::operator=(other);
+        nume = other.nume;
+    }
+    return *this;
+}
+
+Pisicuta::Pisicuta(const Pisicuta &other) = default;

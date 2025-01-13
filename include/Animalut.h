@@ -16,6 +16,9 @@ public:
     Animalut(int varsta, int fericire, int nivel);
     virtual ~Animalut();
 
+    Animalut(const Animalut& other);
+
+    Animalut& operator=(const Animalut& other);
     virtual void joaca() = 0;
     virtual void hraneste() = 0;
     virtual void display() = 0;

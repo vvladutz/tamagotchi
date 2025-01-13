@@ -16,6 +16,9 @@ public:
     explicit Catelus(std::string nume);
     ~Catelus() override;
 
+    Catelus(const Catelus& other);
+    Catelus& operator=(const Catelus& other);
+
     void joaca() override;
     void hraneste() override;
     void checkUpgrade();

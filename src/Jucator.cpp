@@ -76,3 +76,14 @@ const std::string& Jucator::getUsername() const {
 Animalut* Jucator::getAnimal() const {
     return animal;
 }
+
+Jucator& Jucator::operator=(const Jucator& other) {
+    if (this != &other) {
+        username = other.username;
+        animal = other.animal;
+        parola = other.parola;
+    }
+    return *this;
+}
+
+Jucator::Jucator(const Jucator &other) = default;

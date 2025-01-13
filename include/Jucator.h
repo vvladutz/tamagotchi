@@ -20,6 +20,9 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Jucator& j);
     friend std::istream& operator>>(std::istream& in, Jucator& j);
 
+    Jucator(const Jucator& other);
+    Jucator& operator=(const Jucator& other);
+
     bool operator==(const Jucator& j) const;
     void citire();
     void setAnimalut();
