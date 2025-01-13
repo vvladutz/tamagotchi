@@ -22,9 +22,9 @@ public:
 
     void citire();
     void setAnimalut();
-    std::string getUsername();
+    [[nodiscard]] const std::string& getUsername() const;
     [[nodiscard]] Animalut* getAnimal() const;
-    int checkParola(const std::string& check) const;
+    [[nodiscard]] int checkParola(const std::string& check) const;
 };
 
 #endif //JUCATOR_H

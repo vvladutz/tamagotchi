@@ -14,12 +14,13 @@ Meniu& Meniu::getInstance() {
     return instance;
 }
 
-void Meniu::run() {
+bool Meniu::run() {
     while (true) {
         int raspuns;
         std::cout << "alegeti: \n";
         std::cout << "1. creeaza un jucator\n";
         std::cout << "2. alege un jucator\n";
+        std::cout << "3. exit\n";
         std::cin >> raspuns;
         try {
             switch (raspuns) {
@@ -77,6 +78,9 @@ void Meniu::run() {
                     }
                     else std::cout << "parola gresita!\n";
                     break;
+                }
+                case 3: {
+                    return false;
                 }
                 default: {
                     throw WrongInput();

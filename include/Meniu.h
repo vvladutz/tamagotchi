@@ -16,7 +16,7 @@ private:
 public:
     static Meniu& getInstance();
 
-    void run();
+    bool run();
 
     void creeaza();
 };

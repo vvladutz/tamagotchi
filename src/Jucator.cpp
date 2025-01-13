@@ -58,7 +58,7 @@ void Jucator::citire() {
     std::cin >> *this;
 }
 
-std::string Jucator::getUsername() {
+const std::string& Jucator::getUsername() const {
     return username;
 }
 
