@@ -94,9 +94,15 @@ bool Meniu::run() {
                     break;
                 }
                 case 3: {
-                    for (const auto i : jucatori) {
-                        i.getAnimal()->display();
+                    int ok =0;
+                    for (const auto& i : jucatori) {
+                        if (i.getAnimal() != nullptr) {
+                            i.getAnimal()->display();
+                            ok=1;
+                        }
                     }
+                    if (!ok) std::cout << "nu exista animalute!\n";
+                    break;
                 }
                 case 4: {
                     return false;
