@@ -133,6 +133,12 @@ bool Meniu::run() {
                         std::cout << "jucator invalid!\n";
                         break;
                     }
+                    if (jucatori[jucatorId2].getAnimal() != nullptr) {
+                        std::cout << "ATENTIE! AI DEJA UN ANIMAL! esti sigur ca vrei sa copiezi altul? \n";
+                        std::cout << "sansa ta sa te retragi! apasa 9 ca sa iesi, orice alta cifra ca sa continui!\n";
+                        std::cin >> raspuns;
+                        if (raspuns == 9) break;
+                    }
                     std::cout << "animalutul cui jucator il doresti?\n";
                     for (int i = 0; i < static_cast<int>(jucatori.size()); i++) {
                         std::cout << i+1 << ". " << jucatori[i].getUsername() << std::endl;
