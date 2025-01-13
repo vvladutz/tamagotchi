@@ -4,6 +4,8 @@
 
 #include "Meniu.h"
 #include <iostream>
+#include <limits>
+
 #include "WrongInput.h"
 
 Meniu::Meniu() = default;
@@ -21,8 +23,15 @@ bool Meniu::run() {
         std::cout << "1. creeaza un jucator\n";
         std::cout << "2. alege un jucator\n";
         std::cout << "3. exit\n";
-        std::cin >> raspuns;
+
         try {
+            std::cin >> raspuns;
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                throw WrongInput();
+            }
+
             switch (raspuns) {
                 case 1: {
                     creeaza();
@@ -88,7 +97,8 @@ bool Meniu::run() {
                     return false;
                 }
                 default: {
-                    throw WrongInput();
+                    std::cout << "nu inteleg.\n";
+                    break;
                 }
             }
         }
