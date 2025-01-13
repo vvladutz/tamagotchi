@@ -1,4 +1,3 @@
-#include "Catelus.h"
 #include "Meniu.h"
 
 int main() {
