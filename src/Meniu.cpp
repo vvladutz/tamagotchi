@@ -17,8 +17,8 @@ Meniu& Meniu::getInstance() {
 }
 
 void Meniu::checkForDuplicates() {
-    for (int i = 0; i < jucatori.size(); i++) {
-        for (int j = i+1; j < jucatori.size(); j++ ) {
+    for (int i = 0; i < static_cast<int>(jucatori.size()); i++) {
+        for (int j = i+1; j < static_cast<int>(jucatori.size()); j++ ) {
             if (jucatori[i] == jucatori[j]) {
                 std::cout << "nu poti crea jucatorul " << jucatori[i].getUsername() << " deoarece exista deja!\n";
                 jucatori.erase(jucatori.begin()+i);
