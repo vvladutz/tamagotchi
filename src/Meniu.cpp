@@ -17,14 +17,11 @@ Meniu& Meniu::getInstance() {
 }
 
 void Meniu::checkForDuplicates() {
-    for (auto it = jucatori.begin(); it != jucatori.end(); ++it) {
-        auto current = std::next(it);
-        while (current != jucatori.end()) {
-            if (*it == *current) {
-                std::cout << "nu poti crea jucatorul " << current->getUsername() << " deoarece exista deja!\n";
-                current = jucatori.erase(current);
-            } else {
-                ++current;
+    for (int i = 0; i < jucatori.size(); i++) {
+        for (int j = i+1; j < jucatori.size(); j++ ) {
+            if (jucatori[i] == jucatori[j]) {
+                std::cout << "nu poti crea jucatorul " << jucatori[i].getUsername() << " deoarece exista deja!\n";
+                jucatori.erase(jucatori.begin()+i);
             }
         }
     }
