@@ -1,5 +1,5 @@
-# Nu primesc notă pentru că nu am pus titlu și descriere
-
+# Proiect inspirat de Tamagotchi!
+Tamagotchi este primul pet virtual, lansat de Bandai in 1996 (international in 1997). Personal, interactiunile mele cu aceasta consola nu sunt foarte dezvoltate, avand acces la ea doar prin intermediul prietenilor care o detin. Am ales totusi aceasta tema deoarece mi se pare o jucarie foarte interesanta si draguta, si m-am gandit ca ar fi frumos sa incerc sa o implementez in C++. 
 ## Instrucțiuni de compilare
 
 Proiectul este configurat cu CMake.
