@@ -38,7 +38,8 @@ bool Meniu::run() {
         std::cout << "1. creeaza un jucator\n";
         std::cout << "2. alege un jucator\n";
         std::cout << "3. vezi informatii despre toate animalutele existente\n";
-        std::cout << "4. exit\n";
+        std::cout << "4. copiaza animalutul altui jucator\n";
+        std::cout << "9. exit\n";
 
         try {
             int raspuns;
@@ -121,6 +122,44 @@ bool Meniu::run() {
                     break;
                 }
                 case 4: {
+                    std::cout << "ce jucator esti?\n";
+                    for (int i = 0; i < static_cast<int>(jucatori.size()); i++) {
+                        std::cout << i+1 << ". " << jucatori[i].getUsername() << std::endl;
+                    }
+                    int jucatorId2;
+                    std::cin >> jucatorId2;
+                    --jucatorId2;
+                    if (!(jucatorId2 >= 0 && jucatorId2 < static_cast<int>(jucatori.size()))) {
+                        std::cout << "jucator invalid!\n";
+                        break;
+                    }
+                    std::cout << "animalutul cui jucator il doresti?\n";
+                    for (int i = 0; i < static_cast<int>(jucatori.size()); i++) {
+                        std::cout << i+1 << ". " << jucatori[i].getUsername() << std::endl;
+                    }
+                    int jucatorId;
+                    std::cin >> jucatorId;
+                    --jucatorId;
+                    if (jucatorId == jucatorId2) {
+                        std::cout << "nu iti poti copia propriul animalut!\n";
+                        break;
+                    }
+                    if (!(jucatorId >= 0 && jucatorId < static_cast<int>(jucatori.size()))) {
+                        std::cout << "jucator invalid!\n";
+                        break;
+                    }
+                    std::cout << "introduceti parola!\n";
+                    std::string parola;
+                    std::cin >> parola;
+                    if (jucatori[jucatorId].checkParola(parola)) {
+                        if (jucatori[jucatorId].getAnimal() == nullptr) {
+                            std::cout << "jucatorul " << jucatori[jucatorId].getUsername() << " nu are un animalut!\n";
+                        }
+                        else jucatori[jucatorId2] = jucatori[jucatorId];
+                    }
+                    break;
+                }
+                case 9: {
                     return false;
                 }
                 default: {

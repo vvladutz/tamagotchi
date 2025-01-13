@@ -79,9 +79,7 @@ Animalut* Jucator::getAnimal() const {
 
 Jucator& Jucator::operator=(const Jucator& other) {
     if (this != &other) {
-        username = other.username;
         animal = other.animal;
-        parola = other.parola;
     }
     return *this;
 }
