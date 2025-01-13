@@ -18,17 +18,19 @@ Meniu& Meniu::getInstance() {
 
 void Meniu::checkForDuplicates() {
     for (auto it = jucatori.begin(); it != jucatori.end(); ++it) {
-        auto curent = it + 1;
-        while (curent != jucatori.end()) {
-            if (*it == *curent) {
-                std::cout << "nu poti crea jucatorul " << curent->getUsername() << " deoarece exista deja!\n";
-                curent = jucatori.erase(curent);
+        auto current = std::next(it);
+        while (current != jucatori.end()) {
+            if (*it == *current) {
+                std::cout << "nu poti crea jucatorul " << current->getUsername() << " deoarece exista deja!\n";
+                current = jucatori.erase(current);
             } else {
-                ++curent;
+                ++current;
             }
         }
     }
 }
+
+
 
 
 
