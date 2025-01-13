@@ -18,13 +18,13 @@ Meniu& Meniu::getInstance() {
 
 bool Meniu::run() {
     while (true) {
-        int raspuns;
         std::cout << "alegeti: \n";
         std::cout << "1. creeaza un jucator\n";
         std::cout << "2. alege un jucator\n";
         std::cout << "3. exit\n";
 
         try {
+            int raspuns;
             std::cin >> raspuns;
             if (std::cin.fail()) {
                 std::cin.clear();
